@@ -11,19 +11,13 @@ const iStyle = {
   cursor: "pointer",
 };
 
-const TopNavbarMobile = () => {
-  const [toggle, setToggle] = useState(false);
-
-  const handleToggleMenu = () => {
-    setToggle(prev => (!prev))
-    alert(toggle);
-  };
+const TopNavbarMobile = ({handleShowMenu}) => {
 
   return (
     <div className="flex flex-col border border-red-600 bg-[--secondary-bg-color] py-4 gap-5">
       <ul className="col1 flex items-center justify-between px-[--sm-px]">
         <li className="flex items-center gap-5">
-          <i style={iStyle} onClick={handleToggleMenu}>
+          <i style={iStyle} onClick={handleShowMenu}>
             <GrMenu />
           </i>
           <img src={jumiaLogo} alt="Jumia Logo" className="w-[7rem]" />

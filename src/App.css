@@ -12,12 +12,13 @@
   --bg-color: #f1f1f2;
   --secondary-bg-color: #fff;
   --nav-hover-bg: #D4D4D6;
-  --cta-color: #ff9901;
+  --cta-color: #F79A1E;
   --cta-hover-color: #e07e1b;
   --flash-sale-color: #e61601;
   --limited-stock-color: #fee2cc;
   --text-color1: #85858a;
   --text-color2: #565658;
+  --text-color3: #000;
   --card-radius1: 0.2rem;
 }
 
@@ -103,4 +104,23 @@ h4.topNavbar{
 
 span.topNavbar{
   font-size: 1.3rem;
+}
+
+.overflow-x{
+  overflow-x: scroll;
+}
+
+.overflow-y{
+  overflow-y: scroll;
+}
+
+.overflow-x::-webkit-scrollbar, .overflow-y::-webkit-scrollbar{
+  display: none;
+}
+
+
+@media screen and (width < 1120px) {
+  body {
+    background: var(--secondary-bg-color);
+  }
 }

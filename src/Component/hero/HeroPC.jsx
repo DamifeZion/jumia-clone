@@ -13,7 +13,7 @@ import officialStore from "../../assets/official-store.jpg";
 import jForce from "../../assets/JForce.png";
 import { GoDotFill } from "react-icons/go";
 
-const Hero = () => {
+const HeroPC = () => {
   const allImage = [
     slider0,
     slider1,
@@ -139,8 +139,8 @@ const Hero = () => {
 
   return (
     <section className="max-w-inline w-full">
-      <div className="flex justify-between overflow-hidden  w-full rounded-[--card-radius1] border border-green-900 gap-4">
-        <div className="col1 w-[78%] overflow-hidden border border-red-500 cursor-pointer relative">
+      <div className="flex justify-between overflow-hidden  w-full rounded-[--card-radius1] gap-4">
+        <div className="col1 w-[78%] overflow-hidden cursor-pointer relative">
           <a className=" relative">
             {imageData()}
             {bannerRadio()}
@@ -152,7 +152,7 @@ const Hero = () => {
             <img
               src={chevronLeft}
               onClick={handlePrevious}
-              className="w-[35px] opacity-0 group-hover:opacity-100 transition-opacity duration-150 hidden md:block"
+              className="w-[35px] opacity-0 group-hover:opacity-100 transition-opacity duration-150"
             />
           </a>
 
@@ -162,12 +162,12 @@ const Hero = () => {
             <img
               src={chevronRight}
               onClick={handleNext}
-              className="w-[35px] opacity-0 group-hover:opacity-100 transition-opacity duration-150 hidden md:block"
+              className="w-[35px] opacity-0 group-hover:opacity-100 transition-opacity duration-150"
             />
           </a>
         </div>
 
-        <div className="col2 flex flex-col justify-between w-[22%] gap-4 border border-blue-500">
+        <div className="col2 flex flex-col justify-between w-[22%] gap-4">
           <img
             src={officialStore}
             alt="Official Store"
@@ -184,4 +184,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroPC;
