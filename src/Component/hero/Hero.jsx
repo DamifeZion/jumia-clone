@@ -152,7 +152,7 @@ const Hero = () => {
             <img
               src={chevronLeft}
               onClick={handlePrevious}
-              className="w-[35px] opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+              className="w-[35px] opacity-0 group-hover:opacity-100 transition-opacity duration-150 hidden md:block"
             />
           </a>
 
@@ -162,7 +162,7 @@ const Hero = () => {
             <img
               src={chevronRight}
               onClick={handleNext}
-              className="w-[35px] opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+              className="w-[35px] opacity-0 group-hover:opacity-100 transition-opacity duration-150 hidden md:block"
             />
           </a>
         </div>
