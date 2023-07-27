@@ -63,7 +63,7 @@ const Home = () => {
       </div>
     ) : (
       toggleMenu && (
-        <div className=" fixed top-0 left-0 z-[100] bg-[--secondary-bg-color] overflow-y-scroll w-[86%] smlg:w-[85%] h-full ">
+        <div className="overflow-y fixed top-0 left-0 z-[100] bg-[--secondary-bg-color] w-[86%] smlg:w-[85%] h-full ">
           <div className=" bg-[--secondary-bg-color]">
             <AsideMobile handleHideMenu={handleHideMenu} />
           </div>

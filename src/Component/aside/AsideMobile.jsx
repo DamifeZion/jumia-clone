@@ -107,7 +107,7 @@ const asideData = ({ id, icon, txt }) => {
 
 const AsideMobile = ({handleHideMenu}) => {
   return (
-    <ul className="overflow-y w-full h-full ">
+    <ul className=" w-full h-full ">
       <a className="py-4 px-4 w-full gap-3">
         <i className=" text-[2.3rem] " onClick={handleHideMenu}>
           <RiCloseFill />
