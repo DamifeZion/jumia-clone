@@ -104,12 +104,12 @@ const Home = () => {
       <div>{isLarge && <TopLogos />}</div>
       {topNavRender()}
       {callToOrderRender()}
-      <div className=" lg:px-[--lg-px] mt-4 gap-4 justify-between flex w-full overflow-hidden">
+      <div className=" lg:px-[--lg-px] mt-2 gap-4 justify-between flex w-full overflow-hidden">
         {asideRender()}
         {heroRender()}
       </div>
 
-      <div className=" bg-[#0098FD] lg:bg-[--bg-color] flex flex-col pt-[0.5rem] gap-[0.5rem] lg:pt-0 ">
+      <div className=" bg-[--mobile-bg-color] lg:bg-[--bg-color] flex flex-col pt-[0.5rem] gap-[0.5rem] lg:pt-0 ">
         <div className=" gap-1 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between pb-3 lg:pb-2 xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
           {isXLarge ? allProductCategoryXL : allProductCategorySM1}
         </div>
@@ -119,10 +119,10 @@ const Home = () => {
             {allProductCategorySM2}
           </div>
         )}
+      </div>
 
-        <div className=" border border-red-600 h-[100vh] lg:rounded-md w-full lg:mt-0.5rem">
-
-        </div>
+      <div className=" border border-red-600 h-[100vh] lg:rounded-md w-full lg:mt-0.5rem">
+          
       </div>
     </section>
   );
