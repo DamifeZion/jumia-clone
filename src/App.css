@@ -11,11 +11,10 @@
   --sm-px: 1rem;
   --bg-color: #f1f1f2;
   --secondary-bg-color: #fff;
-  --mobile-bg-color: #0098FD;
   --nav-hover-bg: #D4D4D6;
   --cta-color: #F79A1E;
   --cta-hover-color: #e07e1b;
-  --flash-sale-color: #e61601;
+  --danger-color: #e61601;
   --limited-stock-color: #fee2cc;
   --text-color1: #85858a;
   --text-color2: #565658;
@@ -127,7 +126,7 @@ span.topNavbar{
 
 @media screen and (width < 1280px) {
   body {
-    background: var(--mobile-bg-color);
+    background: var(--bg-color);
   }
 
   body::-webkit-scrollbar{

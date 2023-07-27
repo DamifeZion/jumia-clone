@@ -15,6 +15,8 @@ import {
   productCategoryDataPC,
   productCategoryDataMobile,
 } from "../../Page/home/HomeData";
+import { AiTwotoneTag } from "react-icons/ai";
+import { PiCaretRightBold } from "react-icons/pi";
 
 const Home = () => {
   const theme = useTheme();
@@ -115,14 +117,40 @@ const Home = () => {
         </div>
 
         {isSmall && (
-          <div className=" gap-1 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
+          <div className=" gap-1 pb-2 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
             {allProductCategorySM2}
           </div>
         )}
       </div>
 
-      <div className=" border border-red-600 h-[100vh] lg:rounded-md w-full lg:mt-0.5rem">
-          
+      <div className=" h-[100vh] lg:rounded-md w-full mt-2 lg:mt-0.5rem">
+        <div className=" flex place-items-center place-content-between py-1 md:py-2 lg:py-3 bg-[--danger-color] text-[0.8rem] lg:text-[1.7em] text-[--secondary-bg-color] lg:mx-[--lg-px] px-[--sm-px] lg:px-4">
+          <div className=" flex flex-col lg:flex-row place-items-start lg:place-items-center place-content-between w-[75%] lg:w-[60%]">
+            <a className=" gap-2 font-medium">
+              <i className="text-[2rem] -rotate-12 text-[--cta-color]">
+                <AiTwotoneTag />
+              </i>
+
+              <a className=" flex-col place-items-start w-full">
+                <p>Flash Sales</p>
+                <p className=" lg:hidden">
+                  Time Left: <span className=" font-bold">17h : 34m : 48s</span>
+                </p>
+              </a>
+            </a>
+
+            <p className=" hidden lg:block">
+              Time Left: <span className=" font-bold">17h : 34m : 48s</span>
+            </p>
+          </div>
+
+          <a className=" text-[0.8rem] lg:text-[1rem] place-self-start lg:place-self-center">
+            SEE ALL
+            <i className=" hidden lg:block">
+              <PiCaretRightBold />
+            </i>
+          </a>
+        </div>
       </div>
     </section>
   );
