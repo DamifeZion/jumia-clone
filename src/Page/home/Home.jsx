@@ -77,12 +77,10 @@ const Home = () => {
     );
   }
 
-  function unscrollableBody() {
-    const body = document.querySelector("body");
-    !toggleMenu
-      ? (body.style.overflowY = "hidden")
-      : (body.style.overflowY = "auto");
-  }
+  //stop body scrolling when asideRenders is shown
+
+  const body = document.querySelector("body");
+  toggleMenu ? body.style.overflowY = 'hidden' : body.style.overflowY = 'auto';
 
   function heroRender() {
     return isXLarge ? (
@@ -133,7 +131,7 @@ const Home = () => {
       <div className=" h-[100vh] lg:rounded-md w-full mt-2 lg:mt-0.5rem">
         <div className=" flex place-items-center place-content-between py-1 md:py-2 lg:py-3 bg-[--danger-color] text-[0.8rem] lg:text-[1.7em] text-[--secondary-bg-color] lg:mx-[--lg-px] px-[--sm-px] lg:px-4">
           <div className=" flex flex-col lg:flex-row place-items-start lg:place-items-center place-content-between w-[75%] lg:w-[60%]">
-            <a className=" gap-2 font-medium">
+            <div className=" gap-2 font-medium">
               <i className="text-[2rem] -rotate-12 text-[--cta-color]">
                 <AiTwotoneTag />
               </i>
@@ -144,7 +142,7 @@ const Home = () => {
                   Time Left: <span className=" font-bold">17h : 34m : 48s</span>
                 </p>
               </a>
-            </a>
+            </div>
 
             <p className=" hidden lg:block">
               Time Left: <span className=" font-bold">17h : 34m : 48s</span>
