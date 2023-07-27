@@ -109,8 +109,8 @@ const Home = () => {
         {heroRender()}
       </div>
 
-      <div className=" bg-[#0098FD] lg:bg-[--bg-color] flex flex-col pt-[0.5rem] gap-[0.5rem] lg:pt-0">
-        <div className=" gap-1 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between pb-3 lg:pb-0 xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
+      <div className=" bg-[#0098FD] lg:bg-[--bg-color] flex flex-col pt-[0.5rem] gap-[0.5rem] lg:pt-0 ">
+        <div className=" gap-1 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between pb-3 lg:pb-2 xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
           {isXLarge ? allProductCategoryXL : allProductCategorySM1}
         </div>
 

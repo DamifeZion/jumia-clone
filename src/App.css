@@ -120,7 +120,7 @@ span.topNavbar{
 }
 
 .product-category:hover{
-  box-shadow: 0 0 .8rem rgba(121, 115, 115, 0.15);
+  box-shadow: 0 0 1rem rgba(121, 115, 115, 0.23);
 }
 
 
