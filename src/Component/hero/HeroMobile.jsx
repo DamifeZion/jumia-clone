@@ -29,13 +29,13 @@ const HeroMobile = () => {
 
   const [mainImage, setMainImage] = useState(0);
 
-  
+
 
 
 
   return (
   <section className="max-w-inline w-full overflow-hidden">
-    <div className="overflow-x flex w-full xsm:h-[170px] sm:h-[190px] md:h-[340px] smlg:h-[450px] gap-2 p-2 pl-0 border border-red-600">
+    <div className="overflow-x flex w-full xsm:h-[170px] sm:h-[190px] md:h-[340px] smlg:h-[450px] gap-2">
 
     {imageElements}
 

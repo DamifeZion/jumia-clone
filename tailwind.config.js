@@ -15,7 +15,7 @@ export default {
       smlg: "1024px",
       // => @media (min-width: 768px) { ... }
 
-      lg: "1120px",
+      lg: "1200px",
       // => @media (min-width: 1120px) { ... }
 
       xl: "1280px",

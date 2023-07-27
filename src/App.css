@@ -19,6 +19,7 @@
   --text-color1: #85858a;
   --text-color2: #565658;
   --text-color3: #000;
+  --topnavbar-mobile-bg: rgba(0, 0, 0, 0.5);
   --card-radius1: 0.2rem;
 }
 
@@ -118,9 +119,21 @@ span.topNavbar{
   display: none;
 }
 
+.product-category:hover{
+  box-shadow: 0 0 .8rem rgba(121, 115, 115, 0.15);
+}
 
-@media screen and (width < 1120px) {
+
+@media screen and (width < 1280px) {
   body {
     background: var(--secondary-bg-color);
+  }
+
+  body::-webkit-scrollbar{
+    display: none;
+  }
+
+  .product-category:hover{
+    box-shadow: none;
   }
 }

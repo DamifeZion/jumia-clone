@@ -14,7 +14,7 @@ const iStyle = {
 const TopNavbarMobile = ({handleShowMenu}) => {
 
   return (
-    <div className="flex flex-col border border-red-600 bg-[--secondary-bg-color] py-4 gap-5">
+    <div className="flex flex-col bg-[--secondary-bg-color] pt-4 pb-2 gap-5">
       <ul className="col1 flex items-center justify-between px-[--sm-px]">
         <li className="flex items-center gap-5">
           <i style={iStyle} onClick={handleShowMenu}>
