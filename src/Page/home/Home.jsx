@@ -77,6 +77,13 @@ const Home = () => {
     );
   }
 
+  function unscrollableBody() {
+    const body = document.querySelector("body");
+    !toggleMenu
+      ? (body.style.overflowY = "hidden")
+      : (body.style.overflowY = "auto");
+  }
+
   function heroRender() {
     return isXLarge ? (
       <div className="w-[85%]">

@@ -34,6 +34,7 @@ const asideChipStyle = {
 const borderBlockStyle = {
   borderBlock: "2px solid var(--bg-color)",
 };
+
 const borderBottomStyle = {
   borderBottom: "2px solid var(--bg-color)",
 };
@@ -105,7 +106,7 @@ const asideData = ({ id, icon, txt }) => {
   );
 };
 
-const AsideMobile = ({handleHideMenu}) => {
+const AsideMobile = ({ handleHideMenu }) => {
   return (
     <ul className=" w-full h-full ">
       <a className="py-4 px-4 w-full gap-3">
