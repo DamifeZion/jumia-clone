@@ -116,7 +116,7 @@ span.topNavbar{
 }
 
 .overflow-x::-webkit-scrollbar, .overflow-y::-webkit-scrollbar{
-  display: none;
+  /* display: none; */
 }
 
 .product-category:hover{

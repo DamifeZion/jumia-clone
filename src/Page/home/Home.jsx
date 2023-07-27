@@ -63,7 +63,7 @@ const Home = () => {
       </div>
     ) : (
       toggleMenu && (
-        <div className=" fixed top-0 left-0 z-[100] bg-[--secondary-bg-color] overflow-hidden w-[86%] smlg:w-[85%] h-full ">
+        <div className=" fixed top-0 left-0 z-[100] bg-[--secondary-bg-color] overflow-y-scroll w-[86%] smlg:w-[85%] h-full ">
           <div className=" bg-[--secondary-bg-color]">
             <AsideMobile handleHideMenu={handleHideMenu} />
           </div>
@@ -106,7 +106,7 @@ const Home = () => {
       <div>{isLarge && <TopLogos />}</div>
       {topNavRender()}
       {callToOrderRender()}
-      <div className=" lg:px-[--lg-px] mt-2 gap-4 justify-between flex w-full overflow-hidden">
+      <div className=" lg:px-[--lg-px] mt-2 gap-4 justify-between flex w-full">
         {asideRender()}
         {heroRender()}
       </div>
