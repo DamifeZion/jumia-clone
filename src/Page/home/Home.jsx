@@ -181,7 +181,7 @@ const Home = () => {
       data.map((item) => (
         <div
           key={item.id}
-          className="product-api product cursor-pointer hover:scale-[1.01] relative rounded-md w-[31%] sm:w-[31.9%] md:w-[32.6%] smlg:w-[24.4%] lg:w-[16%] h-[150px] md:h-[280px] smlg:h-[320px] lg:h-[220px] pb-4 md:pb-0 lg:pb-0 mb-3 lg:mb-5"
+          className="product-api product overflow-hidden rounded-md cursor-pointer hover:scale-[1.01] relative w-[31%] sm:w-[31.9%] md:w-[32.6%] smlg:w-[24.4%] lg:w-[16%] h-[150px] md:h-[280px] smlg:h-[320px] lg:h-[220px] pb-4 md:pb-0 lg:pb-0 mb-3 lg:mb-5"
         >
           <p
             style={{ display: !item.category && "none" }}
