@@ -51,7 +51,7 @@ const Home = () => {
   function callToOrderRender() {
     return (
       isSmall && (
-        <p className=" text-[1rem] py-1 text-center bg-[--limited-stock-color] ">
+        <p className=" text-[1rem] py-1 text-center bg-[--limited-stock-deal] ">
           CALL TO ORDER: 0700 600 0000
         </p>
       )
@@ -132,7 +132,6 @@ const Home = () => {
     );
   }
 
-  const inputRef = useRef(null);
 
   return (
     <div>
