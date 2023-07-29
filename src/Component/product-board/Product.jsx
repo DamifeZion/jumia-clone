@@ -1,6 +1,7 @@
 import React from "react";
 
 const Product = ({
+  proStyleCS,
   proDiscountStyle,
   proDiscount,
   proImg,
@@ -10,7 +11,7 @@ const Product = ({
   proStrikePrice,
 }) => {
   return (
-    <div className="product cursor-pointer hover:scale-[1.01] rounded-md flex flex-col min-w-[42%] md:min-w-[24.3%] lg:min-w-[16.1%] min-h-[13rem] sm:min-h-[16.2rem] smlg:min-h-[10.8rem] relative gap-2">
+    <div className={"product cursor-pointer hover:scale-[1.01] rounded-md flex flex-col min-w-[42%] md:min-w-[24.3%] lg:min-w-[16.1%] min-h-[13rem] sm:min-h-[16.2rem] smlg:min-h-[10.8rem] relative gap-2" + proStyleCS}>
       <p
         style={proDiscountStyle}
         className=" absolute top-1 md:top-2 right-1 md:right-2 z-[1] px-[.2rem] md:px-[.32rem] py-[.13rem] text-[--discount-txt-color] rounded-[0.2rem] text-[.65rem] md:text-[.85rem] font-normal bg-[--discount-bg-color]"

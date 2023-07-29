@@ -177,18 +177,34 @@ const Home = () => {
   }, []);
 
   const productApi = () => {
-    data ? (
+    return data ? (
       data.map((item) => (
-        <Product
+        <div
           key={item.id}
-          proDiscountStyle={null}
-          proDiscount={null}
-          proImg={item.image}
-          proDescription={item.description}
-          proPrice={item.price}
-          proStrikePriceStyle={null}
-          proStrikePrice={null}
-        />
+          className="product-api product cursor-pointer hover:scale-[1.01] relative rounded-md w-[31%] sm:w-[31.9%] md:w-[32.6%] smlg:w-[24.4%] lg:w-[16%] h-[150px] md:h-[280px] smlg:h-[320px] lg:h-[220px] pb-4 md:pb-0 lg:pb-0 mb-3 lg:mb-5"
+        >
+          <p
+            style={{ display: !item.category && "none" }}
+            className=" absolute top-1 md:top-2 right-1 md:right-2 z-[1] px-[.2rem] md:px-[.32rem] py-[.13rem] text-[--discount-txt-color] rounded-[0.2rem] text-[.65rem] md:text-[.85rem] font-normal bg-[--discount-bg-color]"
+          >
+            {item.category}
+          </p>
+
+          <div className="h-[70%] md:h-[75%] lg:h-[70%]">
+            <img
+              src={item.image}
+              alt={`item ${item.image}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="h-[30%] md:h-[25%] lg:h-[30%] mt-2 text-[0.75rem] md::text-[0.9rem] font-light px-2">
+            <p className=" text-ellipsis overflow-hidden whitespace-nowrap">
+              {item.description}
+            </p>
+            <p className="font-medium text-[0.75rem] md:text-[1rem] w-full whitespace-nowrap text-ellipsis overflow-hidden leading-6">{`₦ ${item.price}`}</p>
+          </div>
+        </div>
       ))
     ) : (
       <p>Loading items...</p>
@@ -237,8 +253,14 @@ const Home = () => {
           {officialStoreBannerRender()}
         </div>
 
-        <div className=" mt-3 lg:mt-5 mx-[--sm-px] lg:mx-[--lg-px] flex flex-wrap">
-          {productApi()}
+        <div className=" h-fit component-shadow mt-3 lg:mt-5 lg:mx-[--lg-px]">
+          <li className="bg-[#DEF1FD] justify-center px-4 text-[1rem] lg:text-[1.3rem] lg:font-medium py-2">
+            <h3>Official API Call</h3>
+          </li>
+
+          <div className="bg-[--secondary-bg-color] lg:bg-transparent flex flex-wrap gap-2 lg:justify-start lg:gap-[0.57rem] py-2 px-2 ">
+            {productApi()}
+          </div>
         </div>
       </section>
     </div>

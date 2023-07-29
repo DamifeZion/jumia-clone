@@ -17,7 +17,7 @@
   --danger-color: #e61601;
   --discount-bg-color: #fef3e9;
   --discount-txt-color: #f68e24;
-  --limited-stock-deal: #FEE2CC;
+  --limited-stock-deal: #fee2cc;
   --text-color1: #85858a;
   --text-color2: #565658;
   --text-color3: #000;
@@ -146,6 +146,10 @@ span.topNavbar {
 
   .product-category:hover,
   .product:hover {
-    box-shadow: none;
+    box-shadow: inset;
+  }
+
+  .product-api {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
 }
