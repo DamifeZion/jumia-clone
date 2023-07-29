@@ -61,6 +61,25 @@ export const asideChipData = [
   },
 ];
 
+//below is Hero Banner Carousel Images
+import slider0 from "../../assets/homepage-slider-1.png";
+import slider1 from "../../assets/homepage-slider-2.png";
+import slider2 from "../../assets/homepage-slider-3.jpg";
+import slider3 from "../../assets/homepage-slider-4.jpg";
+import slider4 from "../../assets/homepage-slider-5.png";
+import slider5 from "../../assets/homepage-slider-6.png";
+import slider6 from "../../assets/homepage-slider-7.jpg";
+
+export const heroBannerImg = [
+  slider0,
+  slider1,
+  slider2,
+  slider3,
+  slider4,
+  slider5,
+  slider6,
+];
+
 //below is product category data for
 
 import p1 from "../../assets/p1.png";
@@ -373,4 +392,23 @@ export const topSellingProduct = [
     proPrice: "₦ 8,800 - ₦ 9,500",
     proStrikePrice: "₦ 15,858",
   },
+];
+
+//Below is carousel Official Store Image Data
+import slider7 from "../../assets/official-store-slider1.jpg";
+import slider8 from "../../assets/official-store-slider2.jpg";
+import slider9 from "../../assets/official-store-slider3.jpg";
+import slider10 from "../../assets/official-store-slider4.jpg";
+import slider11 from "../../assets/official-store-slider5.png";
+import slider12 from "../../assets/official-store-slider6.jpg";
+import slider13 from "../../assets/official-store-slider7.png";
+
+export const officialStoreBannerImg = [
+  slider7,
+  slider8,
+  slider9,
+  slider10,
+  slider11,
+  slider12,
+  slider13,
 ];

@@ -14,9 +14,11 @@ import {
   FlashSale,
 } from "../../Component/export";
 import {
+  heroBannerImg,
   productCategoryDataPC,
   productCategoryDataMobile,
   topSellingProduct,
+  officialStoreBannerImg,
 } from "../../Page/home/HomeData";
 
 const Home = () => {
@@ -89,11 +91,11 @@ const Home = () => {
   function heroRender() {
     return isXLarge ? (
       <div className="w-[85%]">
-        <HeroPC />
+        <HeroPC allImage={heroBannerImg} />
       </div>
     ) : (
       <div className="w-[100%] p-2 pl-0 bg-[--secondary-bg-color]">
-        <HeroMobile />
+        <HeroMobile allImage={heroBannerImg} />
       </div>
     );
   }
@@ -121,17 +123,44 @@ const Home = () => {
     );
   }
 
-  function limitedStockDealsRender() {
+  function flashSaleDealsRender() {
     return (
       <ProductBoard
         pbTitle={""}
-        pbTitleStyle={null} //not necessary just to ease understanding
+        pbTitleStyle={null} //Style pbTitle & seeAll
         productItems={topSellingProduct}
         seeAll={""}
       />
     );
   }
 
+  function limtedStockDealsRender() {
+    return (
+      <ProductBoard
+        pbTitle={"Limited Stock Deals"}
+        pbTitleStyle={{ background: "var(--limited-stock-deal)" }} //Style BG Color of pbTitle & seeAll
+        productItems={topSellingProduct}
+        seeAll={"see all"}
+      />
+    );
+  }
+
+  function officialStoreBannerRender() {
+    return isXLarge ? (
+      <div className="w-[100%]">
+        <HeroPC
+          contStyle='h-[384px]'
+          bannerStyle={{ width: "100%" }}
+          nonBannerStyle={{ display: "none" }}
+          allImage={officialStoreBannerImg}
+        />
+      </div>
+    ) : (
+      <div className="w-[100%] p-2 pl-0 bg-[--secondary-bg-color]">
+        <HeroMobile allImage={officialStoreBannerImg} />
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -161,7 +190,17 @@ const Home = () => {
 
         <div className="flex flex-col mt-2 lg:mx-[--lg-px]">
           <FlashSale />
-          {limitedStockDealsRender()}
+          {flashSaleDealsRender()}
+        </div>
+
+        <div className=" lg:mt-5 lg:mx-[--lg-px]">
+          {limtedStockDealsRender()}
+        </div>
+
+        <div className="mt-2 lg:mt-5 lg:px-[--lg-px]">{officialStoreBannerRender()}</div>
+
+        <div className=" mt-10">
+
         </div>
       </section>
     </div>

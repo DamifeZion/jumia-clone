@@ -13,22 +13,14 @@ import officialStore from "../../assets/official-store.jpg";
 import jForce from "../../assets/JForce.png";
 import { GoDotFill } from "react-icons/go";
 
-const HeroPC = () => {
-  const allImage = [
-    slider0,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider5,
-    slider6,
-  ];
-
+const HeroPC = ({ contStyle, bannerStyle, nonBannerStyle, allImage }) => {
   const [mainImage, setMainImage] = useState(0);
 
   const nextImage = useCallback(() => {
-    setMainImage((prevIndex) => (prevIndex + 1) % allImage.length);
-  }, [allImage.length]);
+    if (allImage && allImage.length) {
+      setMainImage((prevIndex) => (prevIndex + 1) % allImage.length);
+    }
+  }, [allImage]);
 
   useEffect(() => {
     const interval = setInterval(nextImage, 3000);
@@ -36,20 +28,10 @@ const HeroPC = () => {
   }, [nextImage]);
 
   const imageData = () => {
-    if (mainImage === 0) {
-      return <img src={slider0} alt={`Slider ${mainImage}`} />;
-    } else if (mainImage === 1) {
-      return <img src={slider1} alt={`Slider ${mainImage}`} />;
-    } else if (mainImage === 2) {
-      return <img src={slider2} alt={`Slider ${mainImage}`} />;
-    } else if (mainImage === 3) {
-      return <img src={slider3} alt={`Slider ${mainImage}`} />;
-    } else if (mainImage === 4) {
-      return <img src={slider4} alt={`Slider ${mainImage}`} />;
-    } else if (mainImage === 5) {
-      return <img src={slider5} alt={`Slider ${mainImage}`} />;
-    } else if (mainImage === 6) {
-      return <img src={slider6} alt={`Slider ${mainImage}`} />;
+    if (allImage && allImage.length > 0) {
+      return <img src={allImage[mainImage]} alt={`Slider ${mainImage}`} />;
+    } else {
+      return null;
     }
   };
 
@@ -60,6 +42,7 @@ const HeroPC = () => {
       setMainImage((prev) => prev - 1);
     }
   };
+
   const handleNext = () => {
     if (mainImage >= 6) {
       setMainImage(0);
@@ -139,8 +122,16 @@ const HeroPC = () => {
 
   return (
     <section className="max-w-inline w-full">
-      <div className=" flex justify-between overflow-hidden  w-full rounded-[--card-radius1] gap-4">
-        <div className="component-shadow col1 w-[78%] overflow-hidden cursor-pointer relative">
+      <div
+        className={
+          "flex justify-between overflow-hidden w-full rounded-[--card-radius1] gap-4 " +
+          contStyle
+        }
+      >
+        <div
+          style={bannerStyle}
+          className="component-shadow col1 w-[78%] overflow-hidden cursor-pointer relative"
+        >
           <a className=" relative">
             {imageData()}
             {bannerRadio()}
@@ -167,7 +158,10 @@ const HeroPC = () => {
           </a>
         </div>
 
-        <div className="col2 flex flex-col justify-between w-[22%] gap-4">
+        <div
+          style={nonBannerStyle}
+          className="col2 flex flex-col justify-between w-[22%] gap-4"
+        >
           <img
             src={officialStore}
             alt="Official Store"
