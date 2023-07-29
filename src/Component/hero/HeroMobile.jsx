@@ -15,7 +15,7 @@ const HeroMobile = ({ allImage }) => {
 
   return (
     <section className="max-w-inline w-full overflow-hidden">
-      <div className="pl-[--sm-px] overflow-x flex h-[133px] sm:h-[165px] md:h-[340px] smlg:h-[450px] gap-2">
+      <div className="pl-[--sm-px] overflow-x flex h-[133px] sm:h-[166px] md:h-[340px] smlg:h-[450px] gap-2">
         {imageElements}
       </div>
     </section>
