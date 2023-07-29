@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useTheme, useMediaQuery } from "@mui/material";
 import {
   TopLogos,
@@ -163,6 +163,38 @@ const Home = () => {
     );
   }
 
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const url = "https://course-api.com/react-store-products";
+      const response = await fetch(url);
+      const data = await response.json();
+      setData(data);
+    }
+
+    fetchData();
+  }, []);
+
+  const productApi = () => {
+    data ? (
+      data.map((item) => (
+        <Product
+          key={item.id}
+          proDiscountStyle={null}
+          proDiscount={null}
+          proImg={item.image}
+          proDescription={item.description}
+          proPrice={item.price}
+          proStrikePriceStyle={null}
+          proStrikePrice={null}
+        />
+      ))
+    ) : (
+      <p>Loading items...</p>
+    );
+  };
+
   return (
     <div>
       <div>{isLarge && <TopLogos />}</div>
@@ -205,8 +237,8 @@ const Home = () => {
           {officialStoreBannerRender()}
         </div>
 
-        <div className=" mt-10 flex flex-wrap">
-          <Product />
+        <div className=" mt-3 lg:mt-5 mx-[--sm-px] lg:mx-[--lg-px] flex flex-wrap">
+          {productApi()}
         </div>
       </section>
     </div>
