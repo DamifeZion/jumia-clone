@@ -13,7 +13,7 @@ const ProductBoard = ({ pbTitle, pbTitleStyle, seeAll, productItems }) => {
 
   return (
     <div className="component-shadow flex flex-col rounded-sm bg-[--secondary-bg-color] pb-[0.15rem]">
-      <li style={pbTitleStyle} className=" justify-between px-4 text-[1.3rem] mb-[0.3rem] font-medium py-2">
+      <li style={pbTitleStyle} className=" justify-between px-4 text-[1rem] lg:text-[1.3rem] mb-[0.3rem] lg:font-medium py-2">
         <h3>{pbTitle}</h3>
 
         <a className="cursor-pointer font-medium gap-1 lg:text-[1rem] place-self-center lg:place-self-center">

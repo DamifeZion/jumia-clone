@@ -20,6 +20,7 @@ import {
   topSellingProduct,
   officialStoreBannerImg,
 } from "../../Page/home/HomeData";
+import Product from "../../Component/product-board/Product";
 
 const Home = () => {
   const theme = useTheme();
@@ -149,7 +150,7 @@ const Home = () => {
     return isXLarge ? (
       <div className="w-[100%]">
         <HeroPC
-          contStyle='h-[384px]'
+          contStyle="h-[384px] rounded-none"
           bannerStyle={{ width: "100%" }}
           nonBannerStyle={{ display: "none" }}
           allImage={officialStoreBannerImg}
@@ -169,38 +170,43 @@ const Home = () => {
       {callToOrderRender()}
 
       <section className="max-w-inline w-full ">
-        <div className=" lg:px-[--lg-px] mt-2 gap-4 justify-between flex w-full">
+        <div className=" lg:px-[--lg-px] mt-3 gap-4 justify-between flex w-full">
           {asideRender()}
           {heroRender()}
         </div>
 
-        <div className=" bg-[--mobile-bg-color] lg:bg-[--bg-color] flex flex-col pt-[0.5rem] gap-[0.5rem] lg:pt-0 ">
-          <div className="component-shadow gap-1 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between pb-3 lg:pb-2 xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
+        <div className=" bg-[--mobile-bg-color] lg:bg-[--bg-color] flex flex-col mt-3 gap-3 lg:pt-0 ">
+          <div className="component-shadow gap-1 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between pb-3 lg:pb-2 lg:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
             {isXLarge ? allProductCategoryXL : allProductCategorySM1}
           </div>
 
           {isSmall && (
-            <div className=" gap-1 pb-2 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
+            <div className=" gap-1 pb-2 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between lg:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
               {allProductCategorySM2}
             </div>
           )}
         </div>
 
-        <div className=" mx-[--lg-px] mt-1">{topSellingItemRender()}</div>
+        <div className=" mx-[--lg-px] mt-3">{topSellingItemRender()}</div>
 
-        <div className="flex flex-col mt-2 lg:mx-[--lg-px]">
+        <div className="flex flex-col mt-3 lg:mx-[--lg-px]">
           <FlashSale />
           {flashSaleDealsRender()}
         </div>
 
-        <div className=" lg:mt-5 lg:mx-[--lg-px]">
+        <div className=" mt-3 lg:mt-5 lg:mx-[--lg-px]">
           {limtedStockDealsRender()}
         </div>
 
-        <div className="mt-2 lg:mt-5 lg:px-[--lg-px]">{officialStoreBannerRender()}</div>
+        <div className="component-shadow flex flex-col mt-3 lg:mt-5 lg:mx-[--lg-px] overflow-hidden lg:rounded-md">
+          <li className="bg-[#DEF1FD] justify-center px-4 text-[1rem] lg:text-[1.3rem] lg:font-medium py-2">
+            <h3>Official Store</h3>
+          </li>
+          {officialStoreBannerRender()}
+        </div>
 
-        <div className=" mt-10">
-
+        <div className=" mt-10 flex flex-wrap">
+          <Product />
         </div>
       </section>
     </div>
