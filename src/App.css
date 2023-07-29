@@ -146,6 +146,6 @@ span.topNavbar {
 
   .product-category:hover,
   .product:hover {
-    box-shadow: none;
+    /* box-shadow: none; */
   }
 }
