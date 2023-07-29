@@ -139,8 +139,8 @@ const HeroPC = () => {
 
   return (
     <section className="max-w-inline w-full">
-      <div className="flex justify-between overflow-hidden  w-full rounded-[--card-radius1] gap-4">
-        <div className="col1 w-[78%] overflow-hidden cursor-pointer relative">
+      <div className=" flex justify-between overflow-hidden  w-full rounded-[--card-radius1] gap-4">
+        <div className="component-shadow col1 w-[78%] overflow-hidden cursor-pointer relative">
           <a className=" relative">
             {imageData()}
             {bannerRadio()}
@@ -171,12 +171,12 @@ const HeroPC = () => {
           <img
             src={officialStore}
             alt="Official Store"
-            className="flex-1 rounded-[--card-radius1] cursor-pointer"
+            className="component-shadow flex-1 rounded-[--card-radius1] cursor-pointer"
           />
           <img
             src={jForce}
             alt="Official Store"
-            className=" flex-1 rounded-[--card-radius1] cursor-pointer"
+            className="component-shadow flex-1 rounded-[--card-radius1] cursor-pointer"
           />
         </div>
       </div>

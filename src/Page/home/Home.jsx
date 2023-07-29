@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTheme, useMediaQuery } from "@mui/material";
 import {
   TopLogos,
@@ -10,16 +10,18 @@ import {
   HeroPC,
   HeroMobile,
   ProductCategory,
+  ProductBoard,
+  FlashSale,
 } from "../../Component/export";
 import {
   productCategoryDataPC,
   productCategoryDataMobile,
+  topSellingProduct,
 } from "../../Page/home/HomeData";
-import { AiTwotoneTag } from "react-icons/ai";
-import { PiCaretRightBold } from "react-icons/pi";
 
 const Home = () => {
   const theme = useTheme();
+  const is2XLarge = useMediaQuery(theme.breakpoints.up("1280"));
   const isXLarge = useMediaQuery(theme.breakpoints.up("1200"));
   const isLarge = useMediaQuery(theme.breakpoints.up("1025"));
   const isSmall = useMediaQuery(theme.breakpoints.down("lg"));
@@ -40,7 +42,7 @@ const Home = () => {
         <TopNavbarMobile handleShowMenu={handleShowMenu} />
       </div>
     ) : (
-      <div>
+      <div className=" sticky top-0 z-50">
         <TopNavbarPC />
       </div>
     );
@@ -108,58 +110,62 @@ const Home = () => {
     .slice(8)
     .map(productCategoryMap);
 
+  function topSellingItemRender() {
+    return (
+      is2XLarge && (
+        <ProductBoard
+          pbTitle={"Top selling items"}
+          productItems={topSellingProduct}
+        />
+      )
+    );
+  }
+
+  function limitedStockDealsRender() {
+    return (
+      <ProductBoard
+        pbTitle={""}
+        pbTitleStyle={null} //not necessary just to ease understanding
+        productItems={topSellingProduct}
+        seeAll={""}
+      />
+    );
+  }
+
+  const inputRef = useRef(null);
+
   return (
-    <section className="max-w-inline w-full ">
+    <div>
       <div>{isLarge && <TopLogos />}</div>
       {topNavRender()}
       {callToOrderRender()}
-      <div className=" lg:px-[--lg-px] mt-2 gap-4 justify-between flex w-full">
-        {asideRender()}
-        {heroRender()}
-      </div>
 
-      <div className=" bg-[--mobile-bg-color] lg:bg-[--bg-color] flex flex-col pt-[0.5rem] gap-[0.5rem] lg:pt-0 ">
-        <div className=" gap-1 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between pb-3 lg:pb-2 xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
-          {isXLarge ? allProductCategoryXL : allProductCategorySM1}
+      <section className="max-w-inline w-full ">
+        <div className=" lg:px-[--lg-px] mt-2 gap-4 justify-between flex w-full">
+          {asideRender()}
+          {heroRender()}
         </div>
 
-        {isSmall && (
-          <div className=" gap-1 pb-2 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
-            {allProductCategorySM2}
+        <div className=" bg-[--mobile-bg-color] lg:bg-[--bg-color] flex flex-col pt-[0.5rem] gap-[0.5rem] lg:pt-0 ">
+          <div className="component-shadow gap-1 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between pb-3 lg:pb-2 xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
+            {isXLarge ? allProductCategoryXL : allProductCategorySM1}
           </div>
-        )}
-      </div>
 
-      <div className="border-2 border-blue-500 lg:rounded-md w-full mt-2 lg:mt-0.5rem">
-        <div className=" flex place-items-center place-content-between py-1 md:py-2 lg:py-3 bg-[--danger-color] text-[0.8rem] lg:text-[1.7em] text-[--secondary-bg-color] lg:mx-[--lg-px] px-[--sm-px] lg:px-4">
-          <div className=" flex flex-col lg:flex-row place-items-start lg:place-items-center place-content-between w-[75%] lg:w-[60%]">
-            <div className=" flex gap-2 font-medium">
-              <i className="text-[2rem] -rotate-12 text-[--cta-color]">
-                <AiTwotoneTag />
-              </i>
-
-              <a className=" flex-col place-items-start w-full">
-                <p>Flash Sales</p>
-                <p className=" lg:hidden">
-                  Time Left: <span className=" font-bold">17h : 34m : 48s</span>
-                </p>
-              </a>
+          {isSmall && (
+            <div className=" gap-1 pb-2 lg:p-2 flex flex-wrap px-[--sm-px] place-content-between xl:my-4 lg:mx-[--lg-px] lg:rounded-md bg-[--secondary-bg-color]">
+              {allProductCategorySM2}
             </div>
-
-            <p className=" hidden lg:block">
-              Time Left: <span className=" font-bold">17h : 34m : 48s</span>
-            </p>
-          </div>
-
-          <a className=" text-[0.8rem] lg:text-[1rem] place-self-start lg:place-self-center">
-            SEE ALL
-            <i className=" hidden lg:block">
-              <PiCaretRightBold />
-            </i>
-          </a>
+          )}
         </div>
-      </div>
-    </section>
+
+        <div className=" mx-[--lg-px] mt-1">{topSellingItemRender()}</div>
+
+        <div className="flex flex-col mt-2 lg:mx-[--lg-px]">
+          <FlashSale />
+          {limitedStockDealsRender()}
+        </div>
+      </section>
+    </div>
   );
 };
 

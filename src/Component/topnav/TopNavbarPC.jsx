@@ -72,7 +72,7 @@ const TopNavbarPC = () => {
   };
 
   return (
-    <div className="bg-[var(--secondary-bg-color)]">
+    <div className="component-shadow bg-[var(--secondary-bg-color)]">
       <section className="max-w-inline flex items-center  w-full h-[4.5rem] px-[var(--lg-px)]">
         <img
           src={jumiaLogo}
@@ -94,7 +94,7 @@ const TopNavbarPC = () => {
           </span>
           <span
             onClick={handleSearchCancel}
-            className="text-[1.2rem] text-[--text-color1] absolute hidden lg:block lg:left-[535px] cursor-pointer"
+            className="text-[1.2rem] text-[--text-color1] absolute hidden lg:block lg:left-[530px] cursor-pointer"
           >
             {inputValue.search && <ImCancelCircle />}
           </span>

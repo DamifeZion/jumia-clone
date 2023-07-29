@@ -37,7 +37,7 @@ const asideData = ({ id, icon, txt }) => {
 const AsidePC = () => {
   return (
     <section className="max-w-inline w-full">
-      <div className=" pl-3 bg-[--secondary-bg-color] rounded-[--card-radius1]  w-full">
+      <div className="component-shadow pl-3 bg-[--secondary-bg-color] rounded-[--card-radius1]  w-full">
         {asideChipData.map(asideData)}
       </div>
     </section>

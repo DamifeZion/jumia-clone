@@ -11,11 +11,13 @@
   --sm-px: 1rem;
   --bg-color: #f1f1f2;
   --secondary-bg-color: #fff;
-  --nav-hover-bg: #D4D4D6;
-  --cta-color: #F79A1E;
+  --nav-hover-bg: #d4d4d6;
+  --cta-color: #f79a1e;
   --cta-hover-color: #e07e1b;
   --danger-color: #e61601;
-  --limited-stock-color: #fee2cc;
+  --discount-bg-color: #fef3e9;
+  --discount-txt-color: #f68e24;
+  --limited-stock-deal: #FEE2CC;
   --text-color1: #85858a;
   --text-color2: #565658;
   --text-color3: #000;
@@ -40,7 +42,8 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-li, a {
+li,
+a {
   display: flex;
   place-items: center;
 }
@@ -72,7 +75,7 @@ button.normal:hover {
   background-color: var(--cta-hover-color);
 }
 
-h4.helpDropdown{
+h4.helpDropdown {
   font-size: 0.85rem;
   line-height: normal;
   font-weight: 400;
@@ -83,19 +86,18 @@ h4.helpDropdown{
   padding-block: 0.85rem;
 }
 
-h4.helpDropdown:hover{
+h4.helpDropdown:hover {
   background: var(--bg-color);
   color: #000;
   scale: 1.02;
   font-weight: 500;
 }
 
-.topNav-Dropdown-shadow{
+.topNav-Dropdown-shadow {
   box-shadow: 0 0 0.3rem 0.01rem rgba(0, 0, 0, 0.1);
 }
 
-
-h4.topNavbar{
+h4.topNavbar {
   font-size: 1rem;
   line-height: 1rem;
   font-weight: 500;
@@ -103,37 +105,47 @@ h4.topNavbar{
   place-self: flex-end;
 }
 
-span.topNavbar{
+span.topNavbar {
   font-size: 1.3rem;
 }
 
-.overflow-x{
+.overflow-x {
   overflow-x: scroll;
 }
 
-.overflow-y{
+.overflow-y {
   overflow-y: scroll;
 }
 
-.overflow-x::-webkit-scrollbar, .overflow-y::-webkit-scrollbar{
+.overflow-x::-webkit-scrollbar,
+.overflow-y::-webkit-scrollbar {
   display: none;
 }
 
-.product-category:hover{
+.component-shadow {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.product-category:hover,
+.product:hover {
   box-shadow: 0 0 1rem rgba(121, 115, 115, 0.23);
 }
 
+.product:hover {
+  box-shadow: 0 0 1.6rem 0.1rem rgba(112, 110, 110, 0.2);
+}
 
 @media screen and (width < 1280px) {
   body {
     background: var(--bg-color);
   }
 
-  body::-webkit-scrollbar{
+  body::-webkit-scrollbar {
     display: none;
   }
 
-  .product-category:hover{
-    box-shadow: none;
+  .product-category:hover,
+  .product:hover {
+    /* box-shadow: none; */
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductCategory = ({img, txt}) => {
   return (
-    <div className="product-category mt-2 flex flex-col rounded-t-md rounded-b-sm h-[6rem] w-[23.5%] md:h-[12.2rem] smlg:h-[14.2rem] lg:h-[11.5rem] md:w-[24.3%] lg:w-[16.1%] bg-[--bg-color] group overflow-hidden lg:hover:scale-[1.01] cursor-pointer">
+    <div className=" product-category mt-2 flex flex-col rounded-t-md rounded-b-sm h-[6rem] w-[23.5%] md:h-[12.2rem] smlg:h-[14.2rem] lg:h-[11.5rem] md:w-[24.3%] lg:w-[16.1%] bg-[--bg-color] group overflow-hidden lg:hover:scale-[1.01] cursor-pointer">
       <div className="w-full h-full rounded-b-md group-hover:rounded-b-none overflow-hidden">
         <img
           src={img}
